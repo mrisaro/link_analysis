@@ -60,9 +60,7 @@ def analyze_signal(
     outlier_fraction=0.1,
     thr=3,
     pre=1,
-    pos=1,
-    glitch_window=500,
-    glitch_rate_threshold=0.01
+    pos=1
 ):
     """
     Analyze the signal to determine locked regions, valid data points, outliers, uptime, and moving robust std.
@@ -77,8 +75,6 @@ def analyze_signal(
         thr (float): Threshold multiplier for glitch detection within locked regions.
         pre (int): Number of preceding points to include as glitches.
         pos (int): Number of succeeding points to include as glitches.
-        glitch_window (int): Window size for computing glitch rate.
-        glitch_rate_threshold (float): Maximum allowed glitch rate in a window to consider data as valid.
 
     Returns:
         locked_mask (np.ndarray): Boolean array indicating locked regions.
